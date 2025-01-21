@@ -1,0 +1,64 @@
+.lecture-main{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.lecture-thumbnail{
+    width: 200px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.lecture-info{
+    display: flex;
+    flex-direction: column;
+}
+.lecture-tag{
+    display: flex;
+    justify-content: left;
+    position: relative;
+    list-style: none;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -.5px;
+    font-weight: 500;
+    color: #474f59;
+}
+.lecture-name{
+    display: flex;
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -.5px;
+    padding-bottom: 12px;
+    color: #111824;
+}
+.lecture-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.lecture-discount{
+    color: #ff3358;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -.5px;
+    font-weight: 700;
+}
+.lecture-price{
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -.5px;
+    font-weight: 700;
+
+}
+.lecture-divide{
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -.5px;
+    color: #878e99;
+    font-weight: 400;
+
+}
