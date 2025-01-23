@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import GuguDan from './Lectures/guguDan';
-import ComponentBasis from './Lectures/ComponentBasis';
-import Lecture from './Lectures/Chapter3/Lecture';
-import HookBasis from './Lectures/Chapter4/HookBasis';
-import RenderFunctionalComp from './Lectures/Chapter4/RenderFunctionalComp';
-import Accordion from './Lectures/Chapter4/Accordion';
-import EventLink from './Lectures/Chapter5/EventLink';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import GuguDan from "./Lectures/guguDan";
+import ComponentBasis from "./Lectures/ComponentBasis";
+import Lecture from "./Lectures/Chapter3/Lecture";
+import HookBasis from "./Lectures/Chapter4/HookBasis";
+import RenderFunctionalComp from "./Lectures/Chapter4/RenderFunctionalComp";
+import Accordion from "./Lectures/Chapter4/Accordion";
+import EventLink from "./Lectures/Chapter5/EventLink";
+import MemoMain from "./Lectures/Chapter7/MemoMain";
 
 function App() {
-  const rear:Array<number> = [1,2,3,4,5,6,7,8,9];
-  const front:Array<number> = [2,3,4,6,7,8,9]
+  const rear: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const front: Array<number> = [2, 3, 4, 6, 7, 8, 9];
   return (
     <div className="App">
-      <EventLink></EventLink>
-      <Accordion title='타이틀' content='this is content'/>
+      <MemoMain></MemoMain>
+      {/* <EventLink></EventLink> */}
+      {/* <Accordion title="타이틀" content="this is content" /> */}
       {/* <RenderFunctionalComp></RenderFunctionalComp> */}
       {/* <HookBasis></HookBasis> */}
       {/* <Lecture></Lecture> */}
