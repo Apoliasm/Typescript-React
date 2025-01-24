@@ -1,14 +1,18 @@
 import React, { MouseEventHandler } from "react";
-import { MemoInfo } from "./MemoData";
+import { MemoInfo, createMemoId } from "./MemoData";
+import memoArray from "./memoData.json";
 type Props = {
   memoArray: Array<MemoInfo>;
   memoCurrentIndex: number;
   sidebarOnclick: (event: React.MouseEvent, index: number) => void;
+  createOnclick: (evnent: React.MouseEvent) => void;
 };
+
 const MemoSidebar: React.FC<Props> = ({
   memoArray,
   memoCurrentIndex,
   sidebarOnclick,
+  createOnclick,
 }: Props) => {
   return (
     <div className="memo-sidebar_main">
@@ -26,7 +30,9 @@ const MemoSidebar: React.FC<Props> = ({
             {memo.memoTitle}
           </div>
         ))}
-        <div className="memo-sidebar_memo-create"></div>
+        <div className="memo-sidebar_memo-create" onClick={createOnclick}>
+          +
+        </div>
       </div>
     </div>
   );

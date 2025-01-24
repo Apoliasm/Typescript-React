@@ -59,4 +59,17 @@
     justify-content: space-between;
     padding-block: 10px;
   }
+  .memo-sidebar_memo-create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-block: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 700;
+    border: black solid 3px;
+    border-radius: 50%;
+  }
 }

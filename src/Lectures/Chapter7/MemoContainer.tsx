@@ -1,5 +1,5 @@
 import { title } from "process";
-import { MemoInfo, memoArray } from "./MemoData";
+import { MemoInfo } from "./MemoData";
 import React, {
   ChangeEventHandler,
   RefObject,
@@ -8,13 +8,21 @@ import React, {
   useState,
 } from "react";
 
-const MemoContainer: React.FC<MemoInfo> = ({
-  memoTitle,
-  memoCreated,
-  memoLastModified,
-  memoContent,
-}: MemoInfo) => {
+type Props = {
+  memoInfo: MemoInfo;
+  currentIndex: number;
+  deleteOnclick: (event: React.MouseEvent, index: number) => void;
+};
+
+const MemoContainer: React.FC<Props> = ({
+  memoInfo,
+  currentIndex,
+  deleteOnclick,
+}: Props) => {
+  const { memoId, memoTitle, memoCreated, memoLastModified, memoContent } =
+    memoInfo;
   const [currentMemo, setCurrentMemo] = useState<MemoInfo>({
+    memoId,
     memoTitle,
     memoCreated,
     memoLastModified,
@@ -47,6 +55,12 @@ const MemoContainer: React.FC<MemoInfo> = ({
         <div className="memo-container__memo-last-modified">
           last modified
           <div>{lastModified}</div>
+        </div>
+        <div
+          className="memo-container_delete"
+          onClick={(event) => deleteOnclick(event, currentIndex)}
+        >
+          삭제
         </div>
       </div>
 
