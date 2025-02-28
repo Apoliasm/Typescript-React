@@ -1,5 +1,6 @@
 import React, {
   MouseEventHandler,
+  createContext,
   useCallback,
   useEffect,
   useState,
@@ -9,8 +10,12 @@ import MemoContainer from "./MemoContainer";
 import { MemoInfo, createMemoId } from "./MemoData";
 import "./memo.css";
 import memoArray from "./memoData.json";
+import { ReducerBasis } from "./ReducerBasis";
 
 const MemoMain: React.FC = () => {
+  const HelloContext = createContext<{ hello: string } | undefined>({
+    hello: "hello world",
+  });
   const [currentMemoIndex, setCurrentMemoIndex] = useState<number>(0);
   const [currentMemo, setCurrentMemo] = useState<MemoInfo>(memoArray[0]);
   const changeCurrent = useCallback(
@@ -36,6 +41,7 @@ const MemoMain: React.FC = () => {
   const deleteMemo = (event: React.MouseEvent, currentIndex: number) => {
     memoArray.splice(currentIndex, 1);
     //splice : array 요소 제거
+
     setCurrentMemoIndex(0);
   };
 
@@ -45,12 +51,16 @@ const MemoMain: React.FC = () => {
 
   return (
     <div className="memo-main">
-      <MemoSidebar
-        memoArray={memoArray}
-        memoCurrentIndex={currentMemoIndex}
-        sidebarOnclick={changeCurrent}
-        createOnclick={createNewMemo}
-      ></MemoSidebar>
+      <ReducerBasis></ReducerBasis>
+      <HelloContext.Provider value={{ hello: "hellohello" }}>
+        <MemoSidebar
+          memoArray={memoArray}
+          memoCurrentIndex={currentMemoIndex}
+          sidebarOnclick={changeCurrent}
+          createOnclick={createNewMemo}
+        ></MemoSidebar>
+      </HelloContext.Provider>
+
       <MemoContainer
         memoInfo={currentMemo}
         currentIndex={currentMemoIndex}
