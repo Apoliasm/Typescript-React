@@ -9,13 +9,16 @@ import RenderFunctionalComp from "./Lectures/Chapter4/RenderFunctionalComp";
 import Accordion from "./Lectures/Chapter4/Accordion";
 import EventLink from "./Lectures/Chapter5/EventLink";
 import MemoMain from "./Lectures/Chapter7/MemoMain";
+import { TodoResponse } from "./Lectures/SSR/fetch";
+import { TodoMain } from "./Lectures/SSR/TodoMain";
 
-function App() {
+function App({ todos }: { todos: Array<TodoResponse> }) {
   const rear: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const front: Array<number> = [2, 3, 4, 6, 7, 8, 9];
   return (
     <div className="App">
-      <MemoMain></MemoMain>
+      <TodoMain todos={todos} />
+      {/* <MemoMain></MemoMain> */}
       {/* <EventLink></EventLink> */}
       {/* <Accordion title="타이틀" content="this is content" /> */}
       {/* <RenderFunctionalComp></RenderFunctionalComp> */}
